@@ -8,4 +8,4 @@ Psss... just in case you like it, here is a bible verse for you:
 
 ***"What other nation is so great as to have their gods near them***
 ***the way the Lord our God is near us whenever we pray to him?"***
-***- Deuteronomy 4:7 ***
+***- Deuteronomy 4:7***
