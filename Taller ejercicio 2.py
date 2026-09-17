@@ -34,18 +34,21 @@ while c != 0:
 
     c = int(input('Ingrese el código del producto: '))
 
+if v:
+    i = len(v)
+    a = sum(p)
+    o = sum(v)
+    ma = max(v)
+    mi2 = len(mi)
 
-i = len(v)
-a = sum(p)
-o = sum(v)
-ma = max(v)
-mi2 = len(mi)
 
+    system('cls')
 
-system('cls')
+    print(f'La cantidad de ventas realizadas fue de {i}')
+    print(f'El total de productos vendidos fueron {a}')
+    print(f'El total recuadado es de {o}')
+    print(f'EL valor de compra más alto fue {ma}')
+    print(f'La cantidad de compras superiores a $30.000 fueron {mi2}')
 
-print(f'La cantidad de ventas realizadas fue de {i}')
-print(f'El total de productos vendidos fueron {a}')
-print(f'El total recuadado es de {o}')
-print(f'EL valor de compra más alto fue {ma}')
-print(f'La cantidad de compras superiores a $30.000 fueron {mi2}')
+else:
+    print('No se registraron ventas')
