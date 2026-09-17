@@ -1,5 +1,6 @@
 from os import system
 
+l = []
 v = []
 p = []
 mi = []
@@ -21,6 +22,7 @@ while c != 0:
 
     v.append(va)
     p.append(co)
+    l.append(c)
 
 
     system('cls')
@@ -39,7 +41,13 @@ o = sum(v)
 ma = max(v)
 mi2 = len(mi)
 
+
 system('cls')
+
+print(f'La lista en la que se guardan los código es: {l}')
+print(f'La lista de ventas es: {v}')
+print(f'La lista de cantidades compradas es: {p}')
+print(f'La lista de las compras superiores a $30.000 es: {mi}\n')
 
 print(f'La cantidad de ventas realizadas fue de {i}')
 print(f'El total de productos vendidos fueron {a}')
