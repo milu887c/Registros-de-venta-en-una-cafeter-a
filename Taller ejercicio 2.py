@@ -44,11 +44,6 @@ mi2 = len(mi)
 
 system('cls')
 
-print(f'La lista en la que se guardan los código es: {l}')
-print(f'La lista de ventas es: {v}')
-print(f'La lista de cantidades compradas es: {p}')
-print(f'La lista de las compras superiores a $30.000 es: {mi}\n')
-
 print(f'La cantidad de ventas realizadas fue de {i}')
 print(f'El total de productos vendidos fueron {a}')
 print(f'El total recuadado es de {o}')
