@@ -1,54 +1,95 @@
 from os import system
 
-l = []
-v = []
-p = []
-mi = []
+codigos = []
+ventas = []
+cantidades = []
+unidades = []
+mayor = []
 
-print('Programa de control de ventas :D\n')
+contador = 0
 
-c = int(input('Ingrese el código del producto: '))
+print('====PROGRAMA DE CONTROL DE VENTAS====\n')
 
-while c != 0:
+while True:
+    try:
+        print('Para terminar el registro ingrese el código \'0\'')
+        codigo = int(input('Ingrese el código del producto: '))
+        break
+    except ValueError:
+        system('cls')
+        print('Valor inválido. Debes ingresar un número')
 
+while codigo != 0:
+
+    while True:
+        try:
+            cantidad = int(input('Ingrese la cantidad comprada: '))
+            break
+        except ValueError:
+            system('cls')
+            print('Valor inválido. Debes ingresar un número')
+
+    while True:
+        try:
+            unidad = int(input('Ingrese el valor unitario: '))
+            break
+        except ValueError:
+            system('cls')
+            print('Valor inválido. Debes ingresar un número')
+
+
+    total = cantidad * unidad
+
+    if total > 30000:
+        mayor.append(total)
     
-    co = int(input('Ingrese la cantidad comprada: '))
-    u = int(input('Ingrese el valor unitario: '))
-
-    va = co * u
-
-    if va > 30000:
-        mi.append(va)
-
-    v.append(va)
-    p.append(co)
-    l.append(c)
+    unidades.append(unidad)
+    ventas.append(total)
+    cantidades.append(cantidad)
+    codigos.append(codigo)
 
 
     system('cls')
-    h = len(p)
-    if len(p) != 1:
-        print(f'Llevas {h} registros')
+    contador += 1
+    if contador != 1:
+        print(f'Llevas {contador} registros')
     else: 
-        print(f'Llevas {h} registro')
+        print(f'Llevas {contador} registro')
 
-    c = int(input('Ingrese el código del producto: '))
+    while True:
+            try:
+                print('Para terminar el registro ingrese el código \'0\'')
+                codigo = int(input('Ingrese el código del producto: '))
+                break
+            except ValueError:
+                system('cls')
+                print('Valor inválido. Debes ingresar un número')
 
-if v:
-    i = len(v)
-    a = sum(p)
-    o = sum(v)
-    ma = max(v)
-    mi2 = len(mi)
 
+if ventas:
+    suma_cant = sum(cantidades)
+    suma_ventas = sum(ventas)
+    maxima = max(ventas)
+    cant_mayores = len(mayor)
 
     system('cls')
+    print(f'Los códigos ingresados fueron {codigos}')
+    print(f'La lista de las ventas fueron {ventas}')
+    print(f'Las cantidades compradas fueron {cantidades}')
+    print(f'Los valores unitarios fueron {unidades}')
+    print(f'Las ventas mayores a $30.000 pesos fueron {mayor}\n')
 
-    print(f'La cantidad de ventas realizadas fue de {i}')
-    print(f'El total de productos vendidos fueron {a}')
-    print(f'El total recuadado es de {o}')
-    print(f'EL valor de compra más alto fue {ma}')
-    print(f'La cantidad de compras superiores a $30.000 fueron {mi2}')
+    print(f'La cantidad de ventas realizadas fue de {contador}')
+    print(f'El total de productos vendidos fueron {suma_cant}')
+    print(f'El total recuadado es de {suma_ventas}')
+    print(f'EL valor de compra más alto fue {maxima}')
+    print(f'La cantidad de compras superiores a $30.000 fueron {cant_mayores}')
+
+    print('\nDetalles de cada venta:')
+
+    for i in range(len(ventas)):
+        print(f'\nVenta {i + 1}:\nEl código de la venta es: {codigos[i]}\nCantidad comprada: {cantidades[i]}\nEl valor unitario es: {unidades[i]}\nEl total de la venta es: {ventas[i]}')
+        
 
 else:
-    print('No se registraron ventas')
+    print('\nNo se registraron ventas')
