@@ -24,13 +24,6 @@ while codigo != 0:
     while True:
         try:
             cantidad = int(input('Ingrese la cantidad comprada: '))
-            break
-        except ValueError:
-            system('cls')
-            print('Valor inválido. Debes ingresar un número')
-
-    while True:
-        try:
             unidad = int(input('Ingrese el valor unitario: '))
             break
         except ValueError:
